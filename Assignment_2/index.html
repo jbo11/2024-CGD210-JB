@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>CGD210-Assignment 2</title>
+    <link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+      <input id="checkbox" class="toggle" type="checkbox" />
+      <label for="checkbox">
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </label>
+    </header>
+
+    <section class="demo">
+        <dl class="list ass">
+            <dt>Top 10 Billionaires</dt>
+            <dd><a href="#">Bernard Arnault & family</a></dd>
+            <dd><a href="#">Elon Musk</a></dd>
+            <dd><a href="#">Jeff Bezos</a></dd>
+            <dd><a href="#">Larry Ellison</a></dd>
+            <dd><a href="#">Warren Buffett</a></dd>
+            <dd><a href="#">Bill Gates</a></dd>
+            <dd><a href="#">Michael Bloomberg</a></dd>
+            <dd><a href="#">Carlos Slim Helu & family</a></dd>
+            <dd><a href="#">Mukesh Ambani</a></dd>
+            <dd><a href="#">Steve Ballmer</a></dd>
+        </dl>
+    </section>
+  
+    <script src="https://code.jquery.com/jquery-1.8.0.min.js"></script>
+
+    <script src="js/ass2.js"></script>
+    <script>
+        if ( $.fn.ass2.enabled ) {
+            var $ass = $( '.ass' );
+            $ass.ass2({
+                selector: 'dd',
+                overlap: 0.6,
+                speed: 0.85
+            });
+            $( '.toggle' ).on( 'click', function() {
+                $( '.list' ).ass2( 'toggle' );
+            });
+            $( '.demo a' ).click( function( event ) {
+                event.preventDefault();
+            });
+        } else {
+            $( '.warning' ).show();
+        }
+    </script>
+</body>
+</html>
