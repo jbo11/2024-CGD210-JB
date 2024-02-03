@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Survey Form</title>
+  <style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://t4.ftcdn.net/jpg/01/79/08/75/360_F_179087574_aXjXMWEtMCpcB7hiOW7gjomzJKz4i1Y8.jpg') center/cover;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+  .screen-container {
+    display: none;
+    width: 80%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px; /* Added margin to separate screens vertically */
+  }
+
+  #screen-1-checkbox:checked ~ .screen-1,
+  #screen-2-checkbox:checked ~ .screen-2,
+  #screen-3-checkbox:checked ~ .screen-3 {
+    display: block;
+  }
+
+  .screen-radio-button {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  label:hover {
+    background-color: #0056b3;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 15px; /* Adjusted margin for better spacing */
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  .survey-question {
+    margin-bottom: 15px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+</head>
+<body>
+
+  <input class="screen-radio-button" type="radio" name="current-screen" id="screen-1-checkbox" checked />
+  <input class="screen-radio-button" type="radio" name="current-screen" id="screen-2-checkbox" />
+  <input class="screen-radio-button" type="radio" name="current-screen" id="screen-3-checkbox" />
+
+  <label for="screen-1-checkbox">Survey 1</label>
+  <label for="screen-2-checkbox">Survey 2</label>
+  <label for="screen-3-checkbox">Survey 3</label>
+
+  <div class="screen-container screen-1">
+    <h2>Survey 1</h2>
+    <form action="#">
+      <div class="survey-question">
+        <p>1. How would you rate your proficiency in using Dreamweaver for web development?</p>
+        <label><input type="radio" name="proficiency" value="beginner"> Beginner</label>
+        <label><input type="radio" name="proficiency" value="intermediate"> Intermediate</label>
+        <label><input type="radio" name="proficiency" value="advanced"> Advanced</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="screen-container screen-2">
+    <h2>Survey 2</h2>
+    <form action="#">
+      <div class="survey-question">
+        <p>2. What specific features of Dreamweaver do you find most valuable in your web development projects? (Select all that apply)</p>
+        <label><input type="checkbox" name="features" value="code-editor"> Code Editor</label>
+        <label><input type="checkbox" name="features" value="design-view"> WYSIWYG Design View</label>
+        <label><input type="checkbox" name="features" value="ftp-integration"> FTP/SFTP Integration</label>
+        <label><input type="checkbox" name="features" value="responsive-design"> Responsive Design Tools</label>
+        <label><input type="checkbox" name="features" value="live-preview"> Live Preview</label>
+        <label><input type="checkbox" name="features" value="other"> Other (please specify)</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="screen-container screen-3">
+    <h2>Survey 3</h2>
+    <form action="#">
+      <div class="survey-question">
+        <p>3. How satisfied are you with Dreamweaver's user interface and overall user experience?</p>
+        <label><input type="radio" name="satisfaction" value="very-satisfied"> Very Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="satisfied"> Satisfied</label>
+        <label><input type="radio" name="satisfaction" value="neutral"> Neutral</label>
+        <label><input type="radio" name="satisfaction" value="dissatisfied"> Dissatisfied</label>
+        <label><input type="radio" name="satisfaction" value="very-dissatisfied"> Very Dissatisfied</label>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
